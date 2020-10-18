@@ -27,12 +27,12 @@ const Hero = () => {
             </span>
                     <div>
                 <h1 onclick="showModal()">${Hero.state.text}</h1>
-                ${Hero.state.showModal === true ? "<input placeholder='masukan judul'/>" : ''}
+                ${Hero.state.showModal === true ? "<input placeholder='masukan judul' onchange='ubahText(event)'/>" : ('')}
                
                     </div>
             <span class="material-icons" style="
             font-size : 4rem;
-            text-shadow : 5px 5px 5px rgba(0,0,0,0.300):
+            text-shadow : 5px 5px 5px rgba(0,0,0,0.300);
             cursor : pointer;
             color : red;
             " onclick="next()">
@@ -49,8 +49,12 @@ const Hero = () => {
 }
 
 Hero.state = {
-    text: "Ruang Belajar",
-    imgNo: 143,
+    text: "UBAH..",
+    setText: (event) => {
+        Hero.state.text = event
+        App()
+    },
+    imgNo: 340,
     prevImg: () => {
         Hero.state.imgNo -= 1
         App()
@@ -78,5 +82,8 @@ window.next = () => {
 window.showModal = () => {
     Hero.state.setShowModal()
     console.log(Hero.state.showModal)
+}
+window.ubahText = (event) => {
+    Hero.state.setText(event.target.value)
 }
 export default Hero

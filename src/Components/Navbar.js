@@ -13,8 +13,13 @@ const Navbar = () => {
         padding : 0 10%;
         background-color : grey;
         color : white;
+        font-size : 2rem;
+        position : sticky;
+        text-shadow : 5px 5px 5px rgba(0,0,0,0.600);
+        top : 0;
+        left : 0;
     ">
-    <h1 class='brand'>Jrg Balesoft</h1>
+    <h1 class='brand'>BERITA KPK</h1>
      </nav>
     
     
